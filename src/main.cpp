@@ -1,9 +1,10 @@
 #include <SDL3/SDL.h>
+#include <SDL3/SDL_video.h>
 #include <iostream>
 
 int main(int argc, char *argv[]) {
   // Initialize SDL
-  if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+  if (!SDL_Init(SDL_INIT_VIDEO)) {
     std::cerr << "SDL could not initialize! SDL_Error: " << SDL_GetError()
               << std::endl;
     return 1;
